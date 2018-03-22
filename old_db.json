@@ -1,0 +1,28 @@
+{
+  "productsData": [
+    {
+      "id": 1,
+      "productCategory": "Mobiles",
+      "products": [
+        { "name": "iphone 7", "price": 7000, "isAvailable": false },
+        { "name": "Samsung S9", "price": 1000, "isAvailable": true }
+      ]
+    },
+    {
+      "id": 2,
+      "productCategory": "Television",
+      "products": [
+        { "name": "Sony Bravia", "price": 7000, "isAvailable": false },
+        { "name": "Samsung UHD", "price": 10000, "isAvailable": true }
+      ]
+    },
+    {
+      "id": 2,
+      "productCategory": "Tablets",
+      "products": [
+        { "name": "iPad", "price": 7000, "isAvailable": false },
+        { "name": "Surface Pro", "price": 10000, "isAvailable": true }
+      ]
+    }
+  ]
+}

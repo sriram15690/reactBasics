@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "id": 6,
+      "name": "iphone 7",
+      "price": 7000,
+      "isAvailable": false,
+      "category_id": 1
+    },
+    {
+      "id": 1,
+      "name": "Samsung S9",
+      "price": 1000,
+      "isAvailable": true,
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Sony Bravia",
+      "price": 7000,
+      "isAvailable": false,
+      "category_id": 2
+    },
+    {
+      "id": 5,
+      "name": "Samsung UHD",
+      "price": 10000,
+      "isAvailable": true,
+      "category_id": 2
+    },
+    {
+      "id": 3,
+      "name": "iPad",
+      "price": 7000,
+      "isAvailable": false,
+      "category_id": 3
+    },
+    {
+      "id": 4,
+      "name": "Surface Pro",
+      "price": 10000,
+      "isAvailable": true,
+      "category_id": 3
+    },
+    {
+      "name": "iphone 8",
+      "price": "7000",
+      "isAvailable": "false",
+      "category_id": "1",
+      "id": 7
+    },
+    {
+      "name": "iphone 9",
+      "price": "7000",
+      "isAvailable": "false",
+      "category_id": "1",
+      "id": 8
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Mobiles"
+    },
+    {
+      "id": 2,
+      "name": "Television"
+    },
+    {
+      "id": 2,
+      "name": "Tablets"
+    }
+  ]
+}
