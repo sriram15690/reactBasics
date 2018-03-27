@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev-server": "webpack-dev-server",
+    "dev-server": "webpack-dev-server --mode development --hot",
     "build-dev": "webpack --mode development",
     "build-prod": "webpack --mode production",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "db-server": "json-server --watch db.json --port 4000"
   },
   "repository": {
     "type": "git",

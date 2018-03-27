@@ -33,6 +33,8 @@ module.exports = {
   },
 
 devServer: {
-    contentBase: paths.PUBLIC, // this path is served as a static asset.
+    contentBase: paths.PUBLIC,// this path is served as a static asset.
+    open: true, // open the app when you start server.
+    port: 8080
 },
 };
