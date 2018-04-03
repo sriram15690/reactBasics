@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import ProductCategoryList from './components/productCategory';
 import ProductDetails from './components/productDetails';
+import CategoryList from './components/CategoryList';
 import { list } from 'postcss';
 //import productList from '../css/productList.css';
 export default class App extends Component {
@@ -60,7 +61,8 @@ export default class App extends Component {
   render() {
     return  (
       <div>
-        {/* <ProductCategoryList category="Mobiles" categories={this.state.categories} products={this.state.products} /> */}
+        <CategoryList categories={this.state.categories} />
+        <ProductCategoryList category="Mobiles" categories={this.state.categories} products={this.state.products} />
         {/* <ProductDetails category="Mobiles" productName="iphone 7" categories={this.state.categories} products={this.state.products} /> */}
         <button type="button" onClick={() => this.getCategories() }>Get Category</button>
       </div>
