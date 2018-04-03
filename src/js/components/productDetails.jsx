@@ -30,7 +30,7 @@ class ProductDetails extends Component {
                             return(
                                 <div>
                                     <li key={idx}>{product.name} </li>
-                                    <li key={idx + 2}>${product.price} </li>
+                                    <li key={idx + 2}>Price: ${product.price} </li>
                                 </div>
                             ); 
                             }) 
