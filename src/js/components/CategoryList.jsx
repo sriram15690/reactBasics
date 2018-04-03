@@ -9,6 +9,7 @@ class CategoryList extends Component {
           {categories.map(category => {
             return <li key={category.id}>{category.name} </li>;
           })}
+          
         </ul>
       );
     } else {

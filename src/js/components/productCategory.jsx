@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-export function computeProductCategory(categories, category, products) {
+function computeProductCategory(categories, category, products) {
     const returnedProducts = [];
     let itemID = null;  
      categories.forEach((item) => {  
@@ -16,7 +16,6 @@ export function computeProductCategory(categories, category, products) {
     })
     return returnedProducts;
 }
-
 
 class ProductCategoryList extends Component {
         render() {
