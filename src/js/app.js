@@ -11,7 +11,8 @@ export default class App extends Component {
       this.state = {
         categories: [],
         products: [],
-        showProductCategoryList : false
+        targetValue: null,
+        showProductCategoryList : false 
       }
       this.handleCategoryClick = this.handleCategoryClick.bind(this);
     }
@@ -39,9 +40,11 @@ export default class App extends Component {
       }
     }
 
-    handleCategoryClick(){
+    handleCategoryClick(e){
+      e.preventDefault();
       this.setState({
-        showProductCategoryList: !this.state.showProductCategoryList
+        targetValue: e.target.innerHTML,
+        showProductCategoryList: true
       })
     }
    
@@ -50,7 +53,7 @@ export default class App extends Component {
       return  (
         <div>
           <CategoryList handleCategoryList={this.handleCategoryClick} categories={this.state.categories} />
-          {this.state.showProductCategoryList ? <ProductCategoryList category="Television" categories={this.state.categories} products={this.state.products} /> : null}
+          {this.state.showProductCategoryList ? <ProductCategoryList category='Mobiles' categories={this.state.categories} products={this.state.products} /> : null}
           {/* <ProductDetails category="Mobiles" productName="iphone 7" categories={this.state.categories} products={this.state.products} />   */}
         </div>
       );
