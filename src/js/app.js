@@ -40,11 +40,9 @@ export default class App extends Component {
       }
     }
 
-    handleCategoryClick(e){
-      e.preventDefault();
-      const selectedCategory = e.target.innerHTML.trim();
+    handleCategoryClick(name){
       this.setState({
-        selectedCategory: selectedCategory,
+        selectedCategory: name,
         showProductCategoryList: true
       });
      
