@@ -12,6 +12,7 @@ export default function computeProductSection(categories, category, products, da
                             returnedProducts.push(product.name);
                         }else if(data === 'productData'){
                             returnedProducts.push({
+                                id: product.id,
                                 name: product.name,
                                 price: product.price,
                                 Availability: product.isAvailable

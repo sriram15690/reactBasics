@@ -43,7 +43,7 @@ export default class App extends Component {
         <div>
           <CategoryList categories={this.state.categories} />
           <ProductCategoryList category="Television" categories={this.state.categories} products={this.state.products} />
-          {/* <ProductDetails category="Mobiles" productName="iphone 7" categories={this.state.categories} products={this.state.products} /> */}
+          <ProductDetails category="Mobiles" productName="iphone 7" categories={this.state.categories} products={this.state.products} />
         </div>
       );
     }

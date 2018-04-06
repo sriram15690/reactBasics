@@ -5,12 +5,14 @@ class CategoryList extends Component {
 
     if (categories.length !== 0) {
       return (
-        <ul>
-          {categories.map(category => {
-            return <li key={category.id}>{category.name} </li>;
-          })}
-          
-        </ul>
+        <div>
+          <h3>Category</h3>
+          <ul>
+            {categories.map(category => {
+              return <li key={category.id}>{category.name} </li>;
+            })}
+          </ul>
+        </div>
       );
     } else {
       return '';

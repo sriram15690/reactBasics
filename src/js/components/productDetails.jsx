@@ -5,21 +5,24 @@ class ProductDetails extends Component {
     const products = this.props.products;
     const categories = this.props.categories;
     const category = this.props.category;
+    const productName = this.props.productName;
     
     const productInfo = computeProductSection(categories, category, products, 'productData');
 
     if (productInfo.length !== 0) {
       return (
         <div>
-          <h3>Product Details</h3>
-          <ul>
+          <h3>Single Product Details</h3>
+          <div>
             {productInfo.map((product, idx) => {
-              return (
-                <singleProduct id={product.id} productName={product.name} isAvailable={product.Availability} price={product.price} />
-              )
+              if(product.name === productName){
+                return (
+                  <SingleProduct id={product.id} productName={product.name} isAvailable={product.Availability.toString()} price={product.price} />
+                )
+              }
             })
             }
-          </ul>
+          </div>
         </div>
       );
     } else {
@@ -31,12 +34,12 @@ class ProductDetails extends Component {
 
 export default ProductDetails;
 
-const singleProduct = (props) => {
+const SingleProduct = (props) => {
   return (
-    <ul key={`product_${product.id}`}>
-      <li key={idx}>{props.productName} </li>
-      <li key={`price_${idx}`}>Price: ${props.price} </li>
-      <li>Availabity: ${props.isAvailable} </li>
+    <ul>
+      <li key={props.id+1}>{props.productName} </li>
+      <li key={props.id}>Price: ${props.price} </li>
+      <li key={props.id+2 }>Availabity:{props.isAvailable} </li>
     </ul>
   );
 }
