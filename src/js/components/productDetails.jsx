@@ -17,7 +17,7 @@ class ProductDetails extends Component {
             {productInfo.map((product, idx) => {
               if(product.name === productName){
                 return (
-                  <SingleProduct id={product.id} productName={product.name} isAvailable={product.Availability.toString()} price={product.price} />
+                  <SingleProduct key={product.id} id={product.id} productName={product.name} isAvailable={product.Availability.toString()} price={product.price} />
                 )
               }
             })
@@ -36,10 +36,10 @@ export default ProductDetails;
 
 const SingleProduct = (props) => {
   return (
-    <ul>
-      <li key={props.id+1}>{props.productName} </li>
-      <li key={props.id}>Price: ${props.price} </li>
-      <li key={props.id+2 }>Availabity:{props.isAvailable} </li>
+    <ul key={props.key}>
+      <li >{props.productName} </li>
+      <li >Price: ${props.price} </li>
+      <li >Availabity:{props.isAvailable} </li>
     </ul>
   );
 }
