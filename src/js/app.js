@@ -10,8 +10,10 @@ export default class App extends Component {
       super(props);
       this.state = {
         categories: [],
-        products: []
+        products: [],
+        showProductCategoryList : false
       }
+      this.handleCategoryClick = this.handleCategoryClick.bind(this);
     }
   componentDidMount(){
      const _this = this;
@@ -36,14 +38,19 @@ export default class App extends Component {
         console.log(`${error} fetching Data`);
       }
     }
-  
+
+    handleCategoryClick(){
+      this.setState({
+        showProductCategoryList: !this.state.showProductCategoryList
+      })
+    }
+   
   render() {
-    let showComponent = false;
     if(this.state.categories && this.state.products){
       return  (
         <div>
-          <CategoryList categories={this.state.categories} renderComponent={showComponent} />
-          {showComponent ? <ProductCategoryList category="Television" categories={this.state.categories} products={this.state.products} /> : null}
+          <CategoryList handleCategoryList={this.handleCategoryClick} categories={this.state.categories} />
+          {this.state.showProductCategoryList ? <ProductCategoryList category="Television" categories={this.state.categories} products={this.state.products} /> : null}
           {/* <ProductDetails category="Mobiles" productName="iphone 7" categories={this.state.categories} products={this.state.products} />   */}
         </div>
       );

@@ -28,7 +28,6 @@ class ProductDetails extends Component {
     } else {
       return <p> No product found for this category </p>
     }
-
   }
 }
 
