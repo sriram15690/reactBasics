@@ -3,52 +3,51 @@ import ReactDOM from 'react-dom';
 import ProductCategoryList from './components/productCategory';
 import ProductDetails from './components/productDetails';
 import CategoryList from './components/CategoryList';
-import { list } from 'postcss';
-//import productList from '../css/productList.css';
+import $ from 'jquery';
+
 export default class App extends Component {
     constructor(props){
       super(props);
-
       this.state = {
-        categories: [{
-          "id": 1,
-          "name": "Mobiles"
-        },
-        {
-          "id": 2,
-          "name": "Television"
-        }],
-        products: [{
-          "id": 6,
-          "name": "iphone 7",
-          "price": 7000,
-          "isAvailable": false,
-          "category_id": 1
-        },
-        {
-          "id": 1,
-          "name": "Samsung S9",
-          "price": 1000,
-          "isAvailable": true,
-          "category_id": 1
-        },
-        {
-          "id": 2,
-          "name": "Sony Bravia",
-          "price": 7000,
-          "isAvailable": false,
-          "category_id": 2
-        }]
+        categories: [],
+        products: []
       }
     }
+  componentWillMount(){
+     const _this = this;
+      try{
+        $.ajax({
+          url: 'http://localhost:5000/categories',
+          success: function(data) {
+            _this.setState({
+              categories: data
+            })
+          }
+        });
+        $.ajax({
+          url: 'http://localhost:5000/products',
+          success: function(data) {
+            _this.setState({
+              products: data
+            })
+          }
+        });
+      }catch(error){
+        console.log(`${error} fetching Data`);
+      }
+    }
+  
   render() {
-    return  (
-      <div>
-        {/* <CategoryList categories={this.state.categories} /> */}
-        {/* <ProductCategoryList category="Mobiles" categories={this.state.categories} products={this.state.products} /> */}
-        <ProductDetails category="Mobiles" productName="iphone 7" categories={this.state.categories} products={this.state.products} />
-      </div>
-    );
+    if(this.state.categories && this.state.products){
+      return  (
+        <div>
+          <CategoryList categories={this.state.categories} />
+          <ProductCategoryList category="Television" categories={this.state.categories} products={this.state.products} />
+          {/* <ProductDetails category="Mobiles" productName="iphone 7" categories={this.state.categories} products={this.state.products} /> */}
+        </div>
+      );
+    }
+    
   }
 }
 
