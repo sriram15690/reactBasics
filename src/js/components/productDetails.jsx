@@ -17,7 +17,7 @@ class ProductDetails extends Component {
             {productInfo.map((product, idx) => {
               if(product.name === productName){
                 return (
-                  <SingleProduct key={product.id} id={product.id} productName={product.name} isAvailable={product.Availability.toString()} price={product.price} />
+                  <SingleProduct key={product.id} productName={product.name} isAvailable={product.Availability.toString()} price={product.price} />
                 )
               }
             })

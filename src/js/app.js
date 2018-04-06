@@ -13,7 +13,7 @@ export default class App extends Component {
         products: []
       }
     }
-  componentWillMount(){
+  componentDidMount(){
      const _this = this;
       try{
         $.ajax({
@@ -38,12 +38,13 @@ export default class App extends Component {
     }
   
   render() {
+    let showComponent = false;
     if(this.state.categories && this.state.products){
       return  (
         <div>
-          <CategoryList categories={this.state.categories} />
-          <ProductCategoryList category="Television" categories={this.state.categories} products={this.state.products} />
-          <ProductDetails category="Mobiles" productName="iphone 7" categories={this.state.categories} products={this.state.products} />
+          <CategoryList categories={this.state.categories} renderComponent={showComponent} />
+          {showComponent ? <ProductCategoryList category="Television" categories={this.state.categories} products={this.state.products} /> : null}
+          {/* <ProductDetails category="Mobiles" productName="iphone 7" categories={this.state.categories} products={this.state.products} />   */}
         </div>
       );
     }
