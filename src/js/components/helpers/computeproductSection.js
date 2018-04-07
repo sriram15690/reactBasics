@@ -1,7 +1,6 @@
 export default function computeProductSection(categories, category, products, data) {
     const returnedProducts = [];
     let itemID = null;
-    console.log(category);
     if(categories.length !== 0){
         categories.forEach((item) => {  
             if(category == item.name){

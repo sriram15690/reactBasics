@@ -7,10 +7,8 @@ class ProductCategoryList extends Component {
             const products = this.props.products;
             const categories = this.props.categories;
             const category = this.props.category;
-            console.log(category);
             const productCategory = computeProductSection(categories, category, products, 'categoryData');
-            
-
+        
             return (
                 <div>
                     <h3>Products by category</h3>
