@@ -31,25 +31,23 @@ export default class App extends Component {
             })
           }
         });
-        $.ajax({
-          url: 'http://localhost:5000/products',
-          success: function(data) {
-            _this.setState({
-              products: data
-            })
-          }
-        });
       }catch(error){
-        console.log(`${error} fetching Data`);
+        console.log(`${error} fetching category Data`);
       }
     }
 
-    handleCategoryClick(name){
-      this.setState({
-        selectedCategory: name,
-        showProductCategoryList: true
-      });
-     
+    handleCategoryClick(name, id){
+       const _this = this;
+      $.ajax({
+        url: 'http://localhost:5000/products?category_id='+ id,
+        success: function(data) {
+          _this.setState({
+            products: data,
+            selectedCategory: name,
+            showProductCategoryList: true
+          })
+        }
+      });  
     }
 
     handleProductDetails(name){

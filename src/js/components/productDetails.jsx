@@ -35,10 +35,10 @@ export default ProductDetails;
 
 const SingleProduct = (props) => {
   return (
-    <ul key={props.key}>
+    <ul>
       <li >{props.productName} </li>
       <li >Price: ${props.price} </li>
-      <li >Availabity:{props.isAvailable} </li>
+      <li >Availability:{props.isAvailable} </li>
     </ul>
   );
 }

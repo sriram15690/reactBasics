@@ -17,7 +17,7 @@ class CategoryList extends Component {
           <h3>Category</h3>
           <ul>
             {categories.map(category => {
-              return <li onClick={this.props.handleCategoryList.bind(this, category.name)} key={category.id}>{category.name} </li>;
+              return <li onClick={this.props.handleCategoryList.bind(this, category.name, category.id)} key={category.id}>{category.name} </li>;
               // below is another way of handling prop methods which needs arguments
               //return <li onClick={(e) => this.handleClick(category.name, e)} key={category.id}>{category.name} </li>;
             })}
