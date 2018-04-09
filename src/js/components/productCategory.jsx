@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import computeProductSection from './helpers/computeproductSection';
 
 class ProductCategoryList extends Component {
     constructor(props){
@@ -9,18 +8,18 @@ class ProductCategoryList extends Component {
       }
     
       handleClick(id){
-        this.props.productDetails(id);
+        this.props.handleProductDetails(id);
       }
         render() {
-            const products = this.props.products;
-            const categories = this.props.categories;
-            const category = this.props.category;
-            const productCategory = computeProductSection(categories, category, products, 'categoryData');
+            const products = getProductNames(this.props.products);
+            // Example oputput
+            // const products = ["iphone 7", "Samsung S9"];
+            
             return (
                 <div>
                     <h3>Products by category</h3>
-                    {productCategory.map((item, idx) => {
-                        return <li onClick={this.handleClick.bind(this, item)} key={idx}>{item}</li>
+                    {products.map((name, idx) => {
+                        return <li onClick={this.handleClick.bind(this, name)} key={idx}>{name}</li>
                     })}
                 </div> 
             )
@@ -28,3 +27,45 @@ class ProductCategoryList extends Component {
 }
 
 export default ProductCategoryList;
+
+function getProductNames(productData) {
+    let productNames = [];
+    console.log(productData);
+
+        /* sample Data
+
+        [
+          {
+            "id": 6,
+            "name": "iphone 7",
+            "price": 7000,
+            "isAvailable": false,
+            "category_id": 1
+          },
+          {
+            "id": 1,
+            "name": "Samsung S9",
+            "price": 1000,
+            "isAvailable": true,
+            "category_id": 1
+          },
+          {
+            "name": "iphone 8",
+            "price": "7000",
+            "isAvailable": "false",
+            "category_id": "1",
+            "id": 7
+          },
+          {
+            "name": "iphone 9",
+            "price": "7000",
+            "isAvailable": "false",
+            "category_id": "1",
+            "id": 8
+          }
+        ]
+        */
+    // Write logic to extract product names from data
+
+    return productNames;
+}

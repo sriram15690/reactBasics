@@ -62,7 +62,7 @@ export default class App extends Component {
       return  (
         <div>
           <CategoryList handleCategoryList={this.handleCategoryClick} categories={this.state.categories} />
-          {this.state.showProductCategoryList ? <ProductCategoryList productDetails={this.handleProductDetails} category={this.state.selectedCategory} categories={this.state.categories} products={this.state.products} /> : null}
+          {this.state.showProductCategoryList ? <ProductCategoryList handleProductDetails={this.handleProductDetails} products={this.state.products} /> : null}
           {this.state.showProductCategoryList && this.state.showProductDetails ? <ProductDetails category={this.state.selectedCategory} productName={this.state.selectedProduct} categories={this.state.categories} products={this.state.products} /> : null}
         </div>
       );
