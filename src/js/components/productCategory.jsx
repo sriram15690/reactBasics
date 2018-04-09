@@ -29,9 +29,7 @@ export default ProductCategoryList;
 function getProductNames(productData) {
     let productNames = [];
     if(productData.length !== 0){
-       productData.forEach((product) => {
-           productNames.push(product.name);
-       })
+       productNames = productData.map((product) => product.name);
     }else {
         console.log(`No product in ${productData}`);
     }
