@@ -4,7 +4,8 @@ class CategoryList extends Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
-  handleClick(id) {
+
+  handleClick(id){
     this.props.handleCategoryList(id);
   }
   render() {
@@ -18,7 +19,7 @@ class CategoryList extends Component {
             {categories.map(category => {
               return <li onClick={this.props.handleCategoryList.bind(this, category.name)} key={category.id}>{category.name} </li>;
               // below is another way of handling prop methods which needs arguments
-              //return <li onClick={this.handleClick.bind(this, category.name)} key={category.id}>{category.name} </li>;
+              //return <li onClick={(e) => this.handleClick(category.name, e)} key={category.id}>{category.name} </li>;
             })}
           </ul>
         </div>

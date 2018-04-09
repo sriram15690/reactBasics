@@ -12,9 +12,12 @@ export default class App extends Component {
         categories: [],
         products: [],
         selectedCategory: null,
+        selectedProduct: null,
+        showProductDetails: false,
         showProductCategoryList : false 
       }
       this.handleCategoryClick = this.handleCategoryClick.bind(this);
+      this.handleProductDetails = this.handleProductDetails.bind(this);
     }
   componentDidMount(){
      const _this = this;
@@ -22,6 +25,7 @@ export default class App extends Component {
         $.ajax({
           url: 'http://localhost:5000/categories',
           success: function(data) {
+            // this is ajax
             _this.setState({
               categories: data
             })
@@ -47,14 +51,21 @@ export default class App extends Component {
       });
      
     }
+
+    handleProductDetails(name){
+      this.setState({
+        selectedProduct: name,
+        showProductDetails: true
+      })
+    }
    
   render() {
     if(this.state.categories && this.state.products){
       return  (
         <div>
           <CategoryList handleCategoryList={this.handleCategoryClick} categories={this.state.categories} />
-          {this.state.showProductCategoryList ? <ProductCategoryList category={this.state.selectedCategory} categories={this.state.categories} products={this.state.products} /> : null}
-          {/* <ProductDetails category="Mobiles" productName="iphone 7" categories={this.state.categories} products={this.state.products} />   */}
+          {this.state.showProductCategoryList ? <ProductCategoryList productDetails={this.handleProductDetails} category={this.state.selectedCategory} categories={this.state.categories} products={this.state.products} /> : null}
+          {this.state.showProductCategoryList && this.state.showProductDetails ? <ProductDetails category={this.state.selectedCategory} productName={this.state.selectedProduct} categories={this.state.categories} products={this.state.products} /> : null}
         </div>
       );
     }
