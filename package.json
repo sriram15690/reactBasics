@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "yarn run dev-server",
     "dev-server": "webpack-dev-server --mode development --hot",
     "build-dev": "webpack --mode development",
     "build-prod": "webpack --mode production",
