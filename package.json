@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "yarn run dev-server",
+    "start": "webpack -p webpack.config.js --progress && node server.js",
     "dev-server": "webpack-dev-server --mode development --hot",
+    "heroku-postbuild": "webpack -p webpack.config.js --progress && node server.js",
     "build-dev": "webpack --mode development",
     "build-prod": "webpack --mode production",
     "build": "webpack --mode development",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/sriram15690/reactBasics#readme",
   "dependencies": {
+    "express": "^4.16.3",
     "jquery": "^3.3.1",
     "json-server": "^0.12.1",
     "react": "^16.2.0",
