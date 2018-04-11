@@ -23,7 +23,7 @@ export default class App extends Component {
      const _this = this;
       try{
         $.ajax({
-          url: 'http://localhost:5000/categories',
+          url: 'https://react-db.herokuapp.com/categories',
           success: function(data) {
             // this is ajax
             _this.setState({
@@ -39,7 +39,7 @@ export default class App extends Component {
     handleCategoryClick(name, id){
        const _this = this;
       $.ajax({
-        url: 'http://localhost:5000/products?category_id='+ id,
+        url: 'https://react-db.herokuapp.com/products?category_id='+ id,
         success: function(data) {
           _this.setState({
             products: data,
