@@ -6,6 +6,7 @@ Commands:
 Run server: node run dev-server
 DB Server: node run db-server
 To Chnage port num: yarn run dev-server --port 4000
+visit [link] (https://react-app-basics.herokuapp.com/) for app
 ```
 Visit [React-Webapp](https://react-app-basics.herokuapp.com/)
 
