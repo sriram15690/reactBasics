@@ -27,7 +27,7 @@
     "express": "^4.16.3",
     "jquery": "^3.3.1",
     "json-server": "^0.12.1",
-    "react": "^16.2.0",
+    "react": "^16.4.1",
     "react-dom": "^16.2.0",
     "style-loader": "^0.20.3"
   },
