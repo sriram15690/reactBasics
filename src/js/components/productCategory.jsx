@@ -7,8 +7,14 @@ class ProductCategoryList extends Component {
         this.handleClick = this.handleClick.bind(this);
       }
     
-      handleClick(id){
-        this.props.handleProductDetails(id);
+      handleClick(name){
+        console.log(this.props);
+        console.log(name);
+        if(name == 'iphone 7') {
+            this.props.products[1].price ="1000000";    
+        }
+        
+        this.props.handleProductDetails(name);
       }
         render() {
             const products = getProductNames(this.props.products);
