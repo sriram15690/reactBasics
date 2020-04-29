@@ -25,7 +25,7 @@
   "homepage": "https://github.com/sriram15690/reactBasics#readme",
   "dependencies": {
     "express": "^4.16.3",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "json-server": "^0.12.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
